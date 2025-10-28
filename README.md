@@ -11,4 +11,4 @@ Tracking all my solved problems from LeetCode, categorized by difficulty.
 Java (mostly)
 
 ### 🔗 My LeetCode Profile
-[https://leetcode.com/your_username/]((https://leetcode.com/u/robin_jose/))
+((https://leetcode.com/u/robin_jose/))
