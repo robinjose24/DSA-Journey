@@ -1,0 +1,31 @@
+class Solution {
+
+    public static boolean fn(int ind,int[] arr,int target,int[][]dp) {
+        if(target==0){
+            return true;
+        }
+        if(ind==0)  return arr[ind]==target;
+        
+        if(dp[ind][target]!=-1) return dp[ind][target]==1;
+        
+        boolean pick=false;
+        if(arr[ind]<=target){
+            pick= fn(ind-1,arr,target-arr[ind],dp);
+        }    
+            boolean notpick= fn(ind-1,arr,target,dp);
+            
+            dp[ind][target]=(pick||notpick)?1:0;
+            return (pick || notpick);
+        
+    }
+    static Boolean isSubsetSum(int arr[], int sum) {
+        // code here
+        int n=arr.length;
+        int[][] dp=new int[n+1][sum+1];
+        for(int[] row:dp){
+            Arrays.fill(row,-1);
+        }
+        
+        return fn(n-1,arr,sum,dp);
+    }
+}
